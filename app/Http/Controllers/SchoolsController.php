@@ -28,7 +28,7 @@ class SchoolsController extends Controller
         ], 200);
     }
 
-    //delete
+    //delete ??
     public function delete(Request $request){
         $school = School::whereId($request->id)->first();
         if(!isnull ($school)){
@@ -38,7 +38,7 @@ class SchoolsController extends Controller
         return response(200);
     }
 
-    //update
+    //update (in a sense)
     public function complete(Request $request){
         $school = School::whereId($request->id)->first();
         if(!isnull($school)){

@@ -10,7 +10,8 @@ class SchoolsController extends Controller
     // Read
     public function index() {
         $school = School::all();
-
+        //$school = School::get();
+        
         return response()->json([
             "schools" => $school
         ], 200);
@@ -19,8 +20,8 @@ class SchoolsController extends Controller
     //create
     public function store(Request $request) {
         $school = School::create([
-            "schoolName" => $request->schoolName,
-            "schoolAddress" => $request->schoolAddress
+            "school_name" => $request->school_name,
+            "school_address" => $request->school_address
         ]);
 
         return response()->json([
@@ -28,22 +29,28 @@ class SchoolsController extends Controller
         ], 200);
     }
 
-    //delete ??
+    //delete
     public function delete(Request $request){
-        $school = School::whereId($request->id)->first();
-        if(!isnull ($school)){
-            $school -> delete();
+        $school = School::where('school_id', $request->school_id)->first();
+        if(!is_null ($school)){
+            $school->delete();
+            return response('det virker');
+        } else {
+            return response('kiks');
         }
 
         return response(200);
     }
 
-    //update (in a sense)
-    public function complete(Request $request){
-        $school = School::whereId($request->id)->first();
-        if(!isnull($school)){
-            // $school->completed = !$school->completed;
-            $school->save();
+    //update
+    public function update(Request $request){
+        $school = School::where('school_id', $request->school_id)->first();
+        if(!is_null ($school)){
+            $school->update(['school_name' => $request->school_name, 'school_address' => $request->school_address]);
+
+            return response($school);
+        } else {
+            return response('kiks');
         }
 
         return response (200);

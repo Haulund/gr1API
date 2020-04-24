@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('schools', "SchoolsController@index");
 Route::post('schools', "SchoolsController@store");
 Route::post('schools/delete', "SchoolsController@delete");
-Route::post('schools/complete', "SchoolsController@complete");
+Route::post('schools/update', "SchoolsController@update");

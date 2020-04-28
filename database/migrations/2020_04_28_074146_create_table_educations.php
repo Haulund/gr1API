@@ -13,10 +13,15 @@ class CreateTableEducations extends Migration
      */
     public function up()
     {
-        Schema::create('educations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('educations')) {
+            Schema::create('educations', function (Blueprint $table) {
+                $table->increments('edu_id');
+                $table->integer('dep_id')->unsigned();
+                $table->foreign('dep_id')->reference('dep_id')->on('departments');
+                $table->string('edu_name');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

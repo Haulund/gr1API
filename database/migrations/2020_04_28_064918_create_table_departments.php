@@ -13,14 +13,16 @@ class CreateTableDepartments extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
-            $table->increments('dep_id')->primary();
-            $table->integer('school_id')->unsigned();
-            $table->foreign('school_id')->references('school_id')->on('schools');
-            $table->string('dep_name');
-            $table->string('dep_address');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('departments')) {
+            Schema::create('departments', function (Blueprint $table) {
+                $table->increments('dep_id');
+                $table->integer('school_id')->unsigned();
+                $table->foreign('school_id')->references('school_id')->on('schools');
+                $table->string('dep_name');
+                $table->string('dep_address');
+                $table->timestamps();
+            });
+        } 
     }
 
     /**

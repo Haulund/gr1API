@@ -28,3 +28,8 @@ Route::get('departments', "DepartmentsController@index");
 Route::post('departments', "DepartmentsController@store");
 Route::post('departments/delete', "DepartmentsController@delete");
 Route::post('departments/update', "DepartmentsController@update");
+
+Route::get('educations', "EducationsController@index");
+Route::post('educations', "EducationsController@store");
+Route::post('educations/delete', "EducationsController@delete");
+Route::post('educations/update', "EducationsController@update");

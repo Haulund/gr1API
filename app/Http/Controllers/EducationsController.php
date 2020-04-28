@@ -45,7 +45,7 @@ class EducationsController extends Controller
         public function update(Request $request){
             $educations = Education::where('edu_id', $request->edu_id)->first();
             if(!is_null ($educations)){
-                $educations->update(['education_name' => $request->education_name]);
+                $educations->update(['edu_name' => $request->edu_name]);
     
                 return response($educations);
             } else {

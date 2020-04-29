@@ -38,3 +38,13 @@ Route::get('semesters', "SemestersController@index");
 Route::post('semesters', "SemestersController@store");
 Route::post('semesters/delete', "SemestersController@delete");
 Route::post('semesters/update', "SemestersController@update");
+
+Route::get('courses', "CoursesController@index");
+Route::post('courses', "CoursesController@store");
+Route::post('courses/delete', "CoursesController@delete");
+Route::post('courses/update', "CoursesController@update");
+
+Route::get('assignments', "AssignmentsController@index");
+Route::post('assignments', "AssignmentsController@store");
+Route::post('assignments/delete', "AssignmentsController@delete");
+Route::post('assignments/update', "AssignmentsController@update");

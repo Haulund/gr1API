@@ -14,9 +14,10 @@ class CreateTable extends Migration
     public function up()
     {
         Schema::create('schools', function (Blueprint $table) {
-            $table->increments('schoolId');
-            $table->string('schoolName', 255);
-            $table->string('schoolAddress', 255);
+            $table->increments('school_id');
+            $table->string('school_name', 255);
+            $table->string('school_address', 255);
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schools_tb');
+        Schema::dropIfExists('schools');
     }
 }

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class School extends Model
+class Semester extends Model
 {
     protected $guarded = [];
-    protected $primaryKey = 'school_id';
+    protected $primaryKey = "sem_id";
 }

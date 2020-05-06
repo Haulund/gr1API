@@ -17,7 +17,7 @@ class CreateTableSemesters extends Migration
             Schema::create('semesters', function (Blueprint $table) {
                 $table->increments('sem_id');
                 $table->integer('edu_id')->unsigned();
-                $table->foreign('edu_id')->reference('edu_id')->on('educations');
+                $table->foreign('edu_id')->references('edu_id')->on('educations');
                 $table->string('sem_name');
                 $table->timestamps();
             });

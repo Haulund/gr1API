@@ -17,7 +17,7 @@ class CreateTableCourses extends Migration
             Schema::create('courses', function (Blueprint $table) {
                 $table->increments('course_id');
                 $table->integer('sem_id')->unsigned();
-                $table->foreign('sem_id')->reference('sem_id')->on('semesters');
+                $table->foreign('sem_id')->references('sem_id')->on('semesters');
                 $table->string('course_name');
                 $table->string('course_teacher');
                 $table->timestamps();

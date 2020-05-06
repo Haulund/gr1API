@@ -9,11 +9,14 @@ class DepartmentsController extends Controller
 {
     // Read
     public function index() {
-        $departments = Department::all();
+        $departments = Department::with('school')->get();
+        /* $departments = Department::all(); */
                 
         return response()->json([
             "departments" => $departments
         ], 200);
+
+        /* return $departments->toJson(); */
     }
 
     //create

@@ -1,33 +1,33 @@
 -- schools
 
-INSERT INTO `schools` (`school_id`, `school_name`, `school_address`, `created_at`, `updated_at`) VALUES
-(1, 'zealand', 'et sted', NULL, '2020-04-24 07:31:47'),
-(2, 'KU', 'et andet sted', NULL, NULL),
-(5, 'SDU', 'et tredje sted', '2020-04-24 07:12:24', '2020-04-24 07:12:24');
+INSERT INTO `schools` (`school_name`, `school_address`, `created_at`, `updated_at`) VALUES
+('zealand', 'et sted', NULL, '2020-04-24 07:31:47'),
+('KU', 'et andet sted', NULL, NULL),
+('SDU', 'et tredje sted', '2020-04-24 07:12:24', '2020-04-24 07:12:24');
 
 -- semesters
 
-INSERT INTO `semesters` (`sem_id`, `edu_id`, `sem_name`, `created_at`, `updated_at`) VALUES
-(1, 1, '8th semester', '2020-04-28 07:12:59', '2020-04-28 07:15:00');
+INSERT INTO `semesters` (`edu_id`, `sem_name`, `created_at`, `updated_at`) VALUES
+(1, '8th semester', '2020-04-28 07:12:59', '2020-04-28 07:15:00');
 
 -- departments
 
-INSERT INTO `departments` (`dep_id`, `school_id`, `dep_name`, `dep_address`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Roskilde afdeling', 'også et sted', '2020-04-28 05:21:58', '2020-04-28 05:21:58');
+INSERT INTO `departments` (`school_id`, `dep_name`, `dep_address`, `created_at`, `updated_at`) VALUES
+(1, 'Roskilde afdeling', 'også et sted', '2020-04-28 05:21:58', '2020-04-28 05:21:58');
 
 -- educations
 
-INSERT INTO `educations` (`edu_id`, `dep_id`, `edu_name`, `created_at`, `updated_at`) VALUES
+INSERT INTO `educations` (`dep_id`, `edu_name`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Web Development', '2020-04-28 06:54:32', '2020-04-28 06:58:40');
 
 
 -- courses
 
-INSERT INTO `courses` (`course_id`, `sem_id`, `course_name`, `course_teacher`, `created_at`, `updated_at`) VALUES
+INSERT INTO `courses` (`sem_id`, `course_name`, `course_teacher`, `created_at`, `updated_at`) VALUES
 (1, 1, 'PHP', 'Homayoon Fayes', '2020-04-29 04:58:51', '2020-04-29 04:58:51');
 
 -- assignments
 
-INSERT INTO `assignments` (`ass_id`, `course_id`, `ass_name`, `ass_deadline`, `ass_desc`, `created_at`, `updated_at`) VALUES
-(1, 1, 'synopse', '2020-04-29 18:30:00', 'individuel opgave', '2020-04-29 05:34:14', '2020-04-29 05:37:38'),
-(2, 12, 'PHP/db mandatory', '2020-04-29 19:00:00', 'tværfaglig opgave', '2020-04-29 05:38:55', '2020-04-29 05:38:55');
+INSERT INTO `assignments` (`course_id`, `ass_name`, `ass_deadline`, `ass_desc`, `created_at`, `updated_at`) VALUES
+(1, 'synopse', '2020-04-29 18:30:00', 'individuel opgave', '2020-04-29 05:34:14', '2020-04-29 05:37:38'),
+(2, 'PHP/db mandatory', '2020-04-29 19:00:00', 'tværfaglig opgave', '2020-04-29 05:38:55', '2020-04-29 05:38:55');

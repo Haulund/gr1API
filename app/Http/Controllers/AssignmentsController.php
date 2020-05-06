@@ -9,11 +9,13 @@ class AssignmentsController extends Controller
 {
     // Read
     public function index() {
-        $assignments = Assignment::all();
+        $assignments = Assignment::with('course')->get();
         
         return response()->json([
             "assignments" => $assignments
         ], 200);
+
+        /* return $assignments->toJson(); */
     }
 
     //create

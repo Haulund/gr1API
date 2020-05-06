@@ -9,7 +9,9 @@ class EducationsController extends Controller
 {
         // Read
         public function index() {
-            $educations = Education::all();
+            /* $educations = Education::all(); */
+            /* $educations = Education::with('department')->get(); */
+            $educations = Education::with('department')->get();
             
             return response()->json([
                 "educations" => $educations

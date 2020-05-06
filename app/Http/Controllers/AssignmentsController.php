@@ -9,7 +9,8 @@ class AssignmentsController extends Controller
 {
     // Read
     public function index() {
-        $assignments = Assignment::with('course')->get();
+        /* $assignments = Assignment::with('course')->get(); */
+        $assignments = Assignment::all();
         
         return response()->json([
             "assignments" => $assignments
